@@ -17,6 +17,10 @@ public class KVLFUCache implements KVCache {
         countListMap.put(1, new LinkedHashSet<String>());
     }
     
+    public int getSize() {
+    	return mainMap.size();
+    }
+    
     public synchronized String get(String key) {
         if(!mainMap.containsKey(key))
             return null;
