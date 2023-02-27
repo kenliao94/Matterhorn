@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import common.messages.KVMessage;
 import common.messages.TextMessage;
+import common.Constants;
 
 public class KVStore implements KVCommInterface {
 	/**
@@ -25,8 +26,8 @@ public class KVStore implements KVCommInterface {
 	private int port;
     private Logger logger = Logger.getRootLogger();
 
-	private static final int BUFFER_SIZE = 1024;
-	private static final int DROP_SIZE = 1024 * BUFFER_SIZE;
+	private static final int BUFFER_SIZE = Constants.BUFFER_SIZE;
+	private static final int DROP_SIZE = Constants.DROP_SIZE;
 	
 	public KVStore(String input_address, int input_port) {
 		address = input_address;
