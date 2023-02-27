@@ -12,6 +12,10 @@ import app_kvServer.KVServer;
 import client.KVStore;
 import common.messages.KVMessage;
 
+/**
+ * PerformanceTest is a JUnit test class used to test the performance of the KVStore.
+ *
+ */
 public class PerformanceTest extends TestCase {
 
 	@Test

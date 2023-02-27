@@ -12,6 +12,10 @@ import common.messages.KVMessage.StatusType;
 
 import junit.framework.TestCase;
 
+/**
+ * This class contains Additional Tests for the KV Server and Client.
+ * These tests include testing the clearStorage, inStorage, deleteKV, ShellUI, and putWithSpace methods.
+ */
 public class AdditionalTest extends TestCase {
 	
 	private KVServer kvServer;
