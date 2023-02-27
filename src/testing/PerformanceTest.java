@@ -59,6 +59,8 @@ public class PerformanceTest extends TestCase {
 					String testKey = String.valueOf((int)(Math.random() * 200));
 					String testValue = String.valueOf((int)(Math.random() * 200));
 					message = testStore.put(testKey, testValue);
+                    int testValueInt = Integer.parseInt(testValue);
+                    message = testStore.put(testKey, testValueInt);
 					System.out.println("Server response: " + message.toString());
 					Timestamp endTime = new Timestamp(System.currentTimeMillis());
 					putTime += endTime.getTime() - startTime.getTime();
