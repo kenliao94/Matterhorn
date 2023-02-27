@@ -24,6 +24,7 @@ public class LogSetup {
 	 * 
 	 * @param logdir the destination (i.e. directory + filename) for the 
 	 * 		persistent logging information.
+	 * @param level the level of logging to be used
 	 * @throws IOException if the log destination could not be found.
 	 */
 	public LogSetup(String logdir, Level level) throws IOException {
@@ -44,19 +45,7 @@ public class LogSetup {
 	public static boolean isValidLevel(String levelString) {
 		boolean valid = false;
 		
-		if(levelString.equals(Level.ALL.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.DEBUG.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.INFO.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.WARN.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.ERROR.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.FATAL.toString())) {
-			valid = true;
-		} else if(levelString.equals(Level.OFF.toString())) {
+		if(Level.toLevel(levelString) != null) {
 			valid = true;
 		}
 		
