@@ -9,6 +9,9 @@ import org.junit.Test;
 import org.junit.Assert;
 
 
+/**
+ * Tests the basic functionality of the FIFO, LRU and LFU Cache implementations.
+ */
 public class KVCacheTest extends TestCase {
 	
 	@Test

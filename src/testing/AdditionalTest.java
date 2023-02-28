@@ -12,6 +12,9 @@ import common.messages.KVMessage.StatusType;
 
 import junit.framework.TestCase;
 
+/**
+ * AdditionalTest is a JUnit test class for testing the additional methods of the KVServer and KVStore classes.
+ */
 public class AdditionalTest extends TestCase {
 	
 	private KVServer kvServer;
