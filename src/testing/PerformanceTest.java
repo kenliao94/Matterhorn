@@ -12,6 +12,9 @@ import app_kvServer.KVServer;
 import client.KVStore;
 import common.messages.KVMessage;
 
+/**
+ * This class is used to test the performance of storage operations in KV store.
+ */
 public class PerformanceTest extends TestCase {
 
 	@Test

@@ -46,8 +46,8 @@ public class KVStore implements KVCommInterface {
 		logger.info("tearing down the connection ...");
 		try {
 			if (socket != null) {
-				//input.close();
-				//output.close();
+				input.close();
+				output.close();
 				socket.close();
 				socket = null;
 				logger.info("connection closed!");
@@ -56,6 +56,21 @@ public class KVStore implements KVCommInterface {
 			logger.error("Unable to close connection!");
 		}
 	}
+
+    @Override
+    public void closeConnection(){
+        try {
+            if (socket != null) {
+                input.close();
+                output.close();
+                socket.close();
+                socket = null;
+                logger.info("connection closed!");
+            }
+        } catch(IOException ioe) {
+            logger.error("Unable to close connection!");
+        }
+    }
 
 	@Override
 	public KVMessage put(String key, String value) throws Exception {
