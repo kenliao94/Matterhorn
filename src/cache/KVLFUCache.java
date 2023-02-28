@@ -50,6 +50,10 @@ public class KVLFUCache implements KVCache {
         countListMap.get(1).add(key);
     }
     
+    public synchronized int getSize() {
+    	return mainMap.size();
+    }
+    
     public synchronized void delete(String key) {
     	if(!mainMap.containsKey(key))
             return;
