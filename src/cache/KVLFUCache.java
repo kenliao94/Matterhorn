@@ -31,14 +31,6 @@ public class KVLFUCache implements KVCache {
         return mainMap.get(key);
     }
     
-    public synchronized void printAlgorithm() {
-        System.out.println("FIFO");
-    }
-    
-    public synchronized void printCache() {
-        System.out.println("FIFO")
-    }
-    
     public synchronized void set(String key, String value) {
         if(capacity<=0)
             return;
@@ -57,8 +49,12 @@ public class KVLFUCache implements KVCache {
         minCount = 1;
         countListMap.get(1).add(key);
     }
+
+    public synchronized int getSize() {
+        return mainMap.size();
+    }
     
-    public synchronized void remove(String key) {
+    public synchronized void delete(String key) {
     	if(!mainMap.containsKey(key))
             return;
     	int count = countMap.get(key);
@@ -68,4 +64,5 @@ public class KVLFUCache implements KVCache {
     	
     	
     }
+    
 }
