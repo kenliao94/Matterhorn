@@ -52,6 +52,13 @@ public class KVClient implements IKVClient {
     }
 
     @Override
+    public void closeConnection() throws IOException {
+    	kvstore.disconnect();
+    	System.out.println("Connection closed successfully");
+    	logger.info("Connection closed");
+    }
+
+    @Override
     public KVCommInterface getStore() {
     	return kvstore;
     }
@@ -144,6 +151,8 @@ public class KVClient implements IKVClient {
         sb.append("\t\t Store a KV pair on the server \n");
         sb.append(PROMPT).append("get <key>");
         sb.append("\t\t\t Retrieve a KV pair on the server \n");
+        sb.append(PROMPT).append("closeConnection");
+        sb.append("\t\t\t closes the current connection \n");
         sb.append(PROMPT).append("logLevel");
         sb.append("\t\t\t ");
         sb.append("ALL | DEBUG | INFO | WARN | ERROR | FATAL | OFF \n");
