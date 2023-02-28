@@ -13,4 +13,9 @@ public interface KVCache {
 	public void set(String key, String value);
 	
 	public void delete(String key);
+
+    /**
+     * Get the value associated with the given key from the KVKenCache
+     */
+    public String getFromKVKenCache(String key);
 }
