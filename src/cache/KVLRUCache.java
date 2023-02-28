@@ -28,11 +28,12 @@ public class KVLRUCache implements KVCache {
         map.put(key, value);
     }
     
-    public synchronized void remove(String key) {
+    public synchronized int getSize() {
+        return map.size();
+    }
+    
+    public synchronized void delete(String key) {
         map.remove(key);
     }
     
-    public synchronized void printAlgorithm() {}
-    
-    public synchronized void printCache() {}
 }
