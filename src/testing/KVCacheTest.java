@@ -9,6 +9,9 @@ import org.junit.Test;
 import org.junit.Assert;
 
 
+/**
+ * Tests the KVFIFOCache, KVLRUCache, and KVLFUCache classes, by setting, getting, and deleting values from the caches.
+ */
 public class KVCacheTest extends TestCase {
 	
 	@Test

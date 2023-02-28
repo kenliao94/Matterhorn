@@ -12,6 +12,10 @@ import common.messages.KVMessage.StatusType;
 
 import junit.framework.TestCase;
 
+/**
+ * Tests additional functionality for the KVServer, KVClient, and KVStore, such as clearing storage, 
+ * checking for an item in storage, deleting an item, and putting an item with a space in its key.
+ */
 public class AdditionalTest extends TestCase {
 	
 	private KVServer kvServer;
