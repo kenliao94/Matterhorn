@@ -9,6 +9,9 @@ import org.junit.Test;
 import org.junit.Assert;
 
 
+/**
+ * Tests the get, set, and delete operations of FIFO, LRU, and LFU caches to ensure they are correctly implemented.
+ */
 public class KVCacheTest extends TestCase {
 	
 	@Test

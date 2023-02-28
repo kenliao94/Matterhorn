@@ -12,6 +12,10 @@ import app_kvServer.KVServer;
 import client.KVStore;
 import common.messages.KVMessage;
 
+/**
+ * PerformanceTest class tests the performance of a KVStore by performing 1000 operations
+ * of both put and get, and outputting the average time for each.
+ */
 public class PerformanceTest extends TestCase {
 
 	@Test
