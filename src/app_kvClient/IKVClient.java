@@ -9,6 +9,13 @@ public interface IKVClient {
      *      when a connection to the server can not be established
      */
     public void newConnection(String hostname, int port) throws Exception;
+    
+    /**
+     * Close the connection to the server
+     * @throws Exception
+     *      when a connection to the server can not be closed
+     */
+    public void closeConnection() throws Exception;
 
     /**
      * Get the current instance of the Store object
