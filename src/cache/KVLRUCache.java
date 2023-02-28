@@ -19,23 +19,21 @@ public class KVLRUCache implements KVCache {
             }
         };
     }
-    public synchronized void printAlgorithm() {
-        System.out.println("FIFO");
-    }
     
-    public synchronized void printCache() {
-        System.out.println(map);
-    }
-
     public synchronized String get(String key) {
         return map.getOrDefault(key, null);
+    }
+    
+    public synchronized int getSize() {
+        return map.size();
     }
     
     public synchronized void set(String key, String value) {
         map.put(key, value);
     }
     
-    public synchronized void remove(String key) {
+    public synchronized void delete(String key) {
         map.remove(key);
     }
+    
 }
