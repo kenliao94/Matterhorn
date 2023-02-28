@@ -32,4 +32,7 @@ public class KVLRUCache implements KVCache {
         map.remove(key);
     }
     
-}
+    // Add method to implement KVCache interface
+    public synchronized void getValues(String key) {
+        map.get(key);
+    }
