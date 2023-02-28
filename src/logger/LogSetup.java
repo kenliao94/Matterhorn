@@ -19,11 +19,12 @@ public class LogSetup {
 	
 	/**
 	 * Initializes the logging for the echo server. Logs are appended to the 
-	 * console output and written into a separated server log file at a given 
+	 * console output and written into a separate server log file at a given 
 	 * destination.
 	 * 
 	 * @param logdir the destination (i.e. directory + filename) for the 
 	 * 		persistent logging information.
+	 * @param level the logging level for the server
 	 * @throws IOException if the log destination could not be found.
 	 */
 	public LogSetup(String logdir, Level level) throws IOException {
