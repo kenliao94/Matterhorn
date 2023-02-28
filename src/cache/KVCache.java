@@ -8,22 +8,15 @@ public interface KVCache {
 	public String get(String key);
 	
 	/**
+     * Get size of the cache
+     * @return  int size
+     */
+    public int getSize();
+	
+	/**
      * Set the given cache key to the given value
      */
 	public void set(String key, String value);
 	
-     /*
-     * Delete a key in the cache
-     */
 	public void delete(String key);
-
-     /*
-      * Print the algorithm used
-      */
-     public void printAlgorithm();
-
-     /*
-      * Print the cache 
-      */
-     public void printCache();
 }

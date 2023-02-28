@@ -24,6 +24,10 @@ public class KVLRUCache implements KVCache {
         return map.getOrDefault(key, null);
     }
     
+    public synchronized int getSize() {
+        return map.size();
+    }
+    
     public synchronized void set(String key, String value) {
         map.put(key, value);
     }
