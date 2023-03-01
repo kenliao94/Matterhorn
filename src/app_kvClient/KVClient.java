@@ -117,6 +117,17 @@ public class KVClient implements IKVClient {
             }
         } else if(tokens[0].equals("help")) {
             printHelp();
+        } else if(tokens[0].equals("test")) {
+            if (kvstore != null) {
+                try {
+                    KVMessage res = kvstore.test(tokens[1]);
+                    System.out.println(PROMPT + res.getStatus());
+                } catch (Exception e) {
+                    printError("Failed to test key pair");
+                }
+            } else {
+                printError("Not connected to server");
+            }
         } else {
             printError("Unknown command");
             printHelp();
@@ -144,6 +155,8 @@ public class KVClient implements IKVClient {
         sb.append("\t\t Store a KV pair on the server \n");
         sb.append(PROMPT).append("get <key>");
         sb.append("\t\t\t Retrieve a KV pair on the server \n");
+        sb.append(PROMPT).append("test <key> <value>");
+        sb.append("\t\t Test a KV pair on the server \n");
         sb.append(PROMPT).append("logLevel");
         sb.append("\t\t\t ");
         sb.append("ALL | DEBUG | INFO | WARN | ERROR | FATAL | OFF \n");

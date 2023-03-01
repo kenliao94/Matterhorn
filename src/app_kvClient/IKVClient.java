@@ -9,10 +9,11 @@ public interface IKVClient {
      *      when a connection to the server can not be established
      */
     public void newConnection(String hostname, int port) throws Exception;
-
+    
     /**
-     * Get the current instance of the Store object
-     * @return  instance of KVCommInterface
+     * Test the connection to the server
+     * @throws Exception
+     *      when the connection cannot be tested
      */
     public KVCommInterface getStore();
 }
