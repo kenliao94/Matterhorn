@@ -9,21 +9,10 @@ public interface KVCache {
 	
 	/**
      * Set the given cache key to the given value
+     * @param key The key to be set
+     * @param value The value to be set
      */
 	public void set(String key, String value);
 	
-     /*
-     * Delete a key in the cache
-     */
-	public void remove(String key);
-
-     /*
-      * Print the algorithm used
-      */
-     public void printAlgorithm();
-
-     /*
-      * Print the cache 
-      */
-     public void printCache();
+	public void delete(String key);
 }
