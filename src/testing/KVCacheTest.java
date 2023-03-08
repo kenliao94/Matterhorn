@@ -8,7 +8,10 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.Assert;
 
-
+/**
+ * Tests the functionality of the FIFO, LRU, and LFU cache systems by setting
+ * and getting values, as well as deleting values from the caches.
+ */
 public class KVCacheTest extends TestCase {
 	
 	@Test
