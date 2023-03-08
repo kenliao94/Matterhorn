@@ -24,6 +24,7 @@ public class LogSetup {
 	 * 
 	 * @param logdir the destination (i.e. directory + filename) for the 
 	 * 		persistent logging information.
+	 * @param level the logging level for the server
 	 * @throws IOException if the log destination could not be found.
 	 */
 	public LogSetup(String logdir, Level level) throws IOException {

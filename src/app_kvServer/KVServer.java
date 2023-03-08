@@ -29,6 +29,12 @@ import cache.KVLRUCache;
 
 import app_kvServer.IKVServer;
 
+/**
+ * KVServer implements the IKVServer interface and provides the functionality
+ * of a key-value store server. It is responsible for listening for client
+ * connections, creating new ClientConnections for each connection, and
+ * providing access to the KVCache.
+ */
 public class KVServer implements IKVServer {
 
 	/**
@@ -205,15 +211,21 @@ public class KVServer implements IKVServer {
         catch(IOException ex) {
             logger.error(
                 "Error! reading file '" 
-                + key + "'");                  
+                + key + "'" + ex);                  
         }
 	}
 
+	/**
+	 * Clears the KVCache.
+	 */
 	@Override
     public synchronized void clearCache(){
 		cache = createCache(strategy);
 	}
 
+	/**
+	 * Clears the KVStorage.
+	 */
 	@Override
     public synchronized void clearStorage(){
 		File[] files = new File(dbPath).listFiles();
@@ -269,6 +281,12 @@ public class KVServer implements IKVServer {
 		}
 	}
 
+	/**
+	 * Creates a KVCache based on the given strategy.
+	 * 
+	 * @param strategy the CacheStrategy to use.
+	 * @return the created KVCache.
+	 */
 	private KVCache createCache(CacheStrategy strategy){
 		KVCache cache = null;
 		switch (strategy) {
@@ -286,6 +304,11 @@ public class KVServer implements IKVServer {
 		return cache;
 	}
 
+	/**
+	 * Initializes the server, opening a ServerSocket on the specified port.
+	 * 
+	 * @return true if the server was initialized successfully, false otherwise.
+	 */
 	private boolean initializeServer() {
     	logger.info("Initialize server ...");
     	try {
