@@ -8,6 +8,12 @@ public interface KVCache {
 	public String get(String key);
 	
 	/**
+     * Get the size of the cache
+     * @return  int size
+     */
+	public int getSize();
+	
+	/**
      * Set the given cache key to the given value
      */
 	public void set(String key, String value);
